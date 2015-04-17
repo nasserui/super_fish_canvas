@@ -1,0 +1,151 @@
+var canvas = oCanvas.create({
+	canvas: "#canvas",
+	background: "#9CDBFE"
+});
+
+var head = canvas.display.rectangle({
+	x: 350,
+	y: 77,
+	width: 50,
+	height: 50,
+	fill: "#FCD9BE"
+});
+
+var eye = canvas.display.ellipse({
+	x: 390,
+	y: 98,
+	radius: 10,
+	fill: "#ffffff"
+});
+
+var eyeCenter = canvas.display.ellipse({
+	x: 392,
+	y: 98,
+	radius: 5,
+	fill: "#5A3E00"
+});
+
+var nose = canvas.display.ellipse({
+	x: 400,
+	y: 110,
+	radius: 6,
+	fill: "#FCD9BE"
+});
+
+var text = canvas.display.text({
+	x: 650,
+	y: 390,
+	origin: { x: "center", y: "top" },
+	font: "bold 100px sans-serif",
+	text: "Super Man",
+	fill: "#00AAAA"
+});
+
+var cloud1 = canvas.display.ellipse({
+	x: 250,
+	y: 600,
+	radius: 200,
+	fill: "#ffffff"
+});
+
+var cloud2 = canvas.display.ellipse({
+	x: 590,
+	y: 500,
+	radius: 250,
+	fill: "#ffffff"
+});
+
+var cloud3 = canvas.display.ellipse({
+	x: 930,
+	y: 510,
+	radius: 250,
+	fill: "#ffffff"
+});
+
+var cloud4 = canvas.display.ellipse({
+	x: 1100,
+	y: 580,
+	radius: 200,
+	fill: "#ffffff"
+});
+
+
+canvas.addChild(cloud1);
+canvas.addChild(cloud2);
+canvas.addChild(cloud3);
+canvas.addChild(cloud4);
+canvas.addChild(text);
+canvas.addChild(head);
+canvas.addChild(eye);
+canvas.addChild(eyeCenter);
+canvas.addChild(nose);
+
+
+function moveDown() {
+	head.y = head.y + 8;
+	eye.y = eye.y + 8;
+	eyeCenter.y = eyeCenter.y + 8;
+	nose.y = nose.y + 8;
+}
+
+function moveUp() {
+	head.y = head.y - 8;
+	eye.y = eye.y - 8;
+	eyeCenter.y = eyeCenter.y - 8;
+	nose.y = nose.y - 8;
+}
+
+function moveRight() {
+	head.x = head.x + 8;
+	eye.x = eye.x + 8;
+	eyeCenter.x = eyeCenter.x + 8;
+	nose.x = nose.x + 8;
+}
+
+function moveLeft() {
+	head.x = head.x - 8;
+	eye.x = eye.x - 8;
+	eyeCenter.x = eyeCenter.x - 8;
+	nose.x = nose.x - 8;
+}
+
+
+
+canvas.bind("keypress", function () {
+	var keys = canvas.keyboard.getKeysDown();
+	if (keys[0] == 40 && keys[1] == 39) {
+    moveRight();
+		moveDown();
+    alert("right, Down")
+	}
+	if (keys[0] == 38 && keys[1] == 39) {
+		moveUp();
+    moveRight();
+    alert("right, up")
+	}
+
+
+/*
+  if (keys[0] == 38 && keys[1] == 37) {
+		moveUp();
+    moveLeft();
+	}
+	if (keys[0] == 40 && keys[1] == 37) {
+		moveDown();
+    moveLeft();
+	}
+*/
+  if (keys == 38) {
+		moveUp();
+	}
+	if (keys == 40) {
+		moveDown();
+	}
+	if (keys == 39) {
+		moveRight();
+	}
+	if (keys == 37) {
+		moveLeft();
+	}
+	canvas.redraw();
+});

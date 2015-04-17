@@ -1,0 +1,122 @@
+/* 
+* CSS RESET
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*****/
+*{display:none;}
+body { 
+	background: #a7cfdf;
+	background: -moz-linear-gradient(top, #a7cfdf 0%, #23538a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a));
+	background: -webkit-linear-gradient(top, #a7cfdf 0%,#23538a 100%);
+	background: -o-linear-gradient(top, #a7cfdf 0%,#23538a 100%);
+	background: -ms-linear-gradient(top, #a7cfdf 0%,#23538a 100%);
+	background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 );
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.bubble {
+	width: 100px;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.2);
+	border: 2px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 10%;
+	right: 15%;
+	-webkit-animation: bubbleMove 1s infinite;
+	-moz-animation: bubbleMove 1s infinite;
+	animation: bubbleMove 1s infinite;
+}
+.bubble .shadow {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	bottom: 10%;
+	right: 15%;
+}
+.bubble-small {
+	width: 60px;
+	height: 60px;
+	right: 8%;
+	bottom: 5%;
+}
+.bubble-med {
+	width: 80px;
+	height: 80px;
+	left: 10%;
+	bottom: 7%;
+}
+
+/**** BUBBLE MOVE KEYFRAMES ****/
+@-webkit-keyframes bubbleMove {
+  0% {bottom: 10%;}
+  10% {bottom: 20%;}
+  30% {bottom: 40%;}
+  50% {bottom: 50%;}
+  80% {bottom: 60%;}
+  100% {bottom: 70%;}
+}
+@-moz-keyframes bubbleMove {
+  0% {bottom: 10%;}
+  10% {bottom: 20%;}
+  30% {bottom: 40%;}
+  50% {bottom: 50%;}
+  80% {bottom: 60%;}
+  100% {bottom: 70%;}
+}
+@-keyframes bubbleMove {
+  0% {bottom: 10%;}
+  10% {bottom: 20%;}
+  30% {bottom: 40%;}
+  50% {bottom: 50%;}
+  80% {bottom: 60%;}
+  100% {bottom: 70%;}
+}
